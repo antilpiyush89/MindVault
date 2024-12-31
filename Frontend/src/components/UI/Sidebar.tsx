@@ -59,8 +59,3 @@ export const  Sidebar = ({ SidebarOpen, setSidebarOpen }:any)=> {
   }
 
 }
-
-// export const Sidebar = ()=>{
-  
-//   )
-// }

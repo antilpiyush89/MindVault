@@ -52,8 +52,8 @@ export const Dashboard = ()=>{
     <>
       <Sidebar SidebarOpen={SidebarOpen} setSidebarOpen={setSidebarOpen} />
     <ModelPopUp open={open} onClose={()=>setOpen(false)} />
-      <div className={!SidebarOpen ? ` md:ml-0 ml-10 md:bg-gray-100 bg-white min-h-screen` : `md:ml-72 ml-10  md:bg-gray-100 bg-white h-screen`}>
-    <div className="md:flex md:justify-end flex flex-col w-full items-center md:pr-10 pr-0 pt-3">
+      <div className={!SidebarOpen ? ` md:ml-0 ml-10 md:bg-gray-100 bg-white min-h-screen` : `md:ml-72 ml-10  md:bg-gray-100 bg-white min-h-screen`}>
+    <div className="md:flex justify-end flex flex-col w-full items-center md:pr-10 pr-0 pt-3">
     <Button variant="secondary" size="md" text="Share Brain" StartIcon={<ShareIcon size="md"/>}/>
     <Button variant="primary" size="md" text="Add Content" OnClick={()=>{setOpen(true)}} StartIcon={<AddIcon size="md"/>}/>
     </div>
@@ -63,7 +63,9 @@ export const Dashboard = ()=>{
     {contents.map(
       ({title,type,link,contentID})=>{
         console.log("contentID Value in contents map: ",contentID)
+        console.log("filter value: ",filter)
         if(filter == ContentType.Youtube && type==ContentType.Youtube){
+          
           return (
             <Card title={title} type={type} link={link} contentID ={contentID} key={contentID}/>
           )

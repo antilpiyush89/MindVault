@@ -1,4 +1,4 @@
-import { all } from "axios";
+
 import { atom } from "recoil";
 
 
@@ -33,6 +33,6 @@ export const filterType = atom<ContentType>({
 })
 
 export const SidebarAtom = atom<boolean>({
-  key:"filterType",
+  key:"SidebarAtom",
   default:false
 })
