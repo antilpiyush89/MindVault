@@ -27,7 +27,7 @@ app.post("/api/v1/signup",async (req,res)=>{
     .refine((password)=>/[A-Z]/.test(password),{message:"Atleast one capital letter required"})
     .refine((password)=>/[a-z]/.test(password),{message:"Atleast one small letter required"})
     .refine((password)=>/[0-9]/.test(password),{message:"Atleast one number required"})
-    .refine((password)=>/[!@#$%^&*]/.test(password),{message:"Atleast special symbol required"})
+    .refine((password)=>/[!@#$%^&*]/.test(password),{message:"Atleast one special symbol required"})
   })
 
     const {success,error}= UserZodSchema.safeParse(req.body) // Checks for zod validation, UserZodSchema.safeParse contain - {SUCCESS, DATA, ERROR}

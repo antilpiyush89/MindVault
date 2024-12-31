@@ -36,3 +36,8 @@ export const SidebarAtom = atom<boolean>({
   key:"SidebarAtom",
   default:false
 })
+
+export const StrongPasswordRecommendationAtom = atom<string[]>({
+  key:"StrongPasswordRecommendation",
+  default :[]
+})

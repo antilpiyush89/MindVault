@@ -76,14 +76,15 @@ export const ModelPopUp = ({open,onClose}:ModelPopUpInterface)=>{
 }
  export interface InputFieldInterface{
   placeholder:string,
+  text?:string,
   reference?: any // the retrieve data from the htmlinputElement we do by this, this is its datatype
 
 }
 
-export function InputField({placeholder,reference}:InputFieldInterface){
+export function InputField({placeholder,reference,text}:InputFieldInterface){
   return(
     <div className="p-2 mb-4 text-lg w-full rounded-lg outline-none border">
-      <input ref={reference} type="text" placeholder={placeholder} className="outline-none" />
+      <input ref={reference} type={text} placeholder={placeholder} className="outline-none" />
     </div>
   )
 }
